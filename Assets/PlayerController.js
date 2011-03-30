@@ -5,6 +5,7 @@ var rotateSpeed : float = 3.0;
 var canMove : boolean = false;
 var hit : RaycastHit;
 @script RequireComponent(Rigidbody)
+var  xzMoveVector : Vector3;
 
 
 function selectAndMove () 
@@ -56,7 +57,12 @@ function MoveTowards (position : Vector3)
 
 	// Move the character
 	//direction = forward * speed;
-	transform.Translate(Vector3.forward * speed);
+	xzMoveVector = Vector3(Vector3.forward.x, 0, Vector3.forward.z);
+	transform.Translate(xzMoveVector.x * speed, 5, xzMoveVector.z * speed);
+	
+	//transform.rotation.y = 0;
+	//OLD CODE:
+	//transform.Translate(Vector3.forward * speed);
 }
 
 function Update () 
