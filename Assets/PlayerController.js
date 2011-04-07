@@ -57,8 +57,7 @@ function MoveTowards (position : Vector3)
 
 	// Move the character
 	//direction = forward * speed;
-	xzMoveVector = Vector3(Vector3.forward.x, 0, Vector3.forward.z);
-	transform.Translate(xzMoveVector.x * speed, 5, xzMoveVector.z * speed);
+	transform.Translate(Vector3.forward.x * speed, Vector3.forward.y, Vector3.forward.z * speed);
 	
 	//transform.rotation.y = 0;
 	//OLD CODE:
