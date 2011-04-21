@@ -57,7 +57,19 @@ function MoveTowards (position : Vector3)
 
 	// Move the character
 	//direction = forward * speed;
-	transform.Translate(Vector3.forward.x * speed, Vector3.forward.y, Vector3.forward.z * speed);
+	print(position + " " + transform.position);
+	
+	var difference : float = 5.0;
+	
+	if(Mathf.Abs(transform.position.x - position.x) < difference && 
+		Mathf.Abs(transform.position.z - position.z) < difference){
+		
+		canMove = false;
+	}
+	else{
+		transform.Translate(Vector3.forward.x * speed, Vector3.forward.y, Vector3.forward.z * speed);
+		//~ print("STOP");
+	}
 	
 	//transform.rotation.y = 0;
 	//OLD CODE:
