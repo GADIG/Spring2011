@@ -4,6 +4,8 @@ var cam : Camera;
 var score : float;
 var maxVelocity = 10f;
 
+//Testing Github
+
 // Update is called once per frame
 function Update () 
 {
